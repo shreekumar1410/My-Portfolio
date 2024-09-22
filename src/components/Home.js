@@ -6,7 +6,7 @@ const Home = () => {
     <div className="home">
       <h1>Welcome to My Portfolio</h1>
       <p>
-        Hi, I'm [Your Name], a passionate web developer. Explore my work and get to know more about me.
+        Hi, I'm Shree Kumar, a passionate web developer. Explore my work and get to know more about me.
       </p>
     </div>
   );
