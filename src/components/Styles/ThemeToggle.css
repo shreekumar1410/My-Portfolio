@@ -1,0 +1,15 @@
+.theme-toggle-btn {
+    background-color: var(--navbar-bg-color);
+    color: var(--navbar-link-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .theme-toggle-btn:hover {
+    background-color: var(--navbar-link-color);
+    color: var(--navbar-bg-color);
+  }
+  
