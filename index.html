@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="./css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="header-container">
+            <div class="logo">
+                <span onclick="resetToHome()">Portfolio</span>
+            </div>
+            <button class="toggle-btn" onclick="toggleSidebar()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+        </div>
+        <div class="mobile-menu">
+            <button onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home"><i class="fas fa-home"></i><span>Home</span></a></li>
+            <li><a href="#about"><i class="fas fa-user"></i><span>About Me</span></a></li>
+            <li><a href="#career"><i class="fas fa-briefcase"></i><span>Career</span></a></li>
+            <li><a href="#skills"><i class="fas fa-cogs"></i><span>Skills</span></a></li>
+            <li><a href="#projects"><i class="fas fa-project-diagram"></i><span>Projects</span></a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+        </ul>
+        <div class="theme-toggle" onclick="toggleTheme()">
+            <div class="theme-toggle-switch">
+                <i class="fas fa-sun theme-toggle-icon-sun"></i>
+                <i class="fas fa-moon theme-toggle-icon-moon"></i>
+            </div>
+            <span class="theme-toggle-label">Light Mode</span>
+            <i class="fas fa-sun theme-toggle-icon"></i>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section id="home">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Hi, I'm a Full Stack Developer passionate about creating elegant solutions.</p>
+            <div style="margin-top: 20px;">
+                <h3>Featured Work</h3>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h4>Project 1</h4>
+                        <p>E-commerce Platform</p>
+                    </div>
+                    <div class="project-card">
+                        <h4>Project 2</h4>
+                        <p>Task Management App</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>With over 5 years of experience in web development, I specialize in creating responsive and user-friendly applications. I'm passionate about clean code and modern web technologies.</p>
+        </section>
+
+        <section id="career">
+            <h2>Career Journey</h2>
+            <div style="margin-top: 20px;">
+                <h3>Senior Developer - Tech Corp (2020-Present)</h3>
+                <p>Leading development team in creating enterprise solutions</p>
+                
+                <h3>Web Developer - StartUp Inc (2018-2020)</h3>
+                <p>Developed and maintained multiple client websites</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div style="margin-top: 20px;">
+                <h4>HTML/CSS</h4>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 90%"></div>
+                </div>
+
+                <h4>JavaScript</h4>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 85%"></div>
+                </div>
+
+                <h4>React</h4>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 80%"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>E-commerce Platform</h3>
+                    <p>Built using React, Node.js, and MongoDB</p>
+                </div>
+                <div class="project-card">
+                    <h3>Task Management App</h3>
+                    <p>Developed with Vue.js and Firebase</p>
+                </div>
+                <div class="project-card">
+                    <h3>Portfolio Website</h3>
+                    <p>Created using HTML, CSS, and JavaScript</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <div class="contact-form">
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <textarea placeholder="Message" rows="5"></textarea>
+                <button type="submit">Send Message</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="./JS/script.js"></script>
+    
+</body>
+</html>
