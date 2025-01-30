@@ -15,7 +15,7 @@
     --bg-color: #ecf0f1;
     --card-bg: white;
     --sidebar-width: 240px;
-    --sidebar-collapsed-width: 60px;
+    --sidebar-collapsed-width: 65px;
     --transition-speed: 0.4s;
 }
 
@@ -117,7 +117,7 @@ body {
 .sidebar .nav-links a:hover,
 .sidebar .nav-links a.active {
     background: var(--secondary-color);
-    transform: translateX(5px);
+    transform: translateZ(5px);
 }
 
 .sidebar .nav-links i {
@@ -134,7 +134,7 @@ body {
 
 .sidebar.collapsed .nav-links a:hover span {
     position: absolute;
-    left: 50px;
+    left: 70px;
     background: var(--primary-color);
     padding: 8px 15px;
     border-radius: 4px;
@@ -151,6 +151,15 @@ body {
     transform: translateX(0);
 }
 
+.sidebar.collapsed .nav-links a.active:hover {
+    background: var(--secondary-color);
+    transform: none;
+}
+
+.sidebar.collapsed .nav-links i {
+    margin: 0 auto;
+}
+
 .sidebar.collapsed .nav-links a.active i {
     transform: scale(1.2);
 }
@@ -158,7 +167,10 @@ body {
 @keyframes popIn {
     0% {
         opacity: 0;
-        transform: translateX(-10px) scale(0.8);
+        transform: translateX(-20px) scale(0.8);
+    }
+    50% {
+        transform: translateX(-10px) scale(0.9);
     }
     100% {
         opacity: 1;
@@ -230,7 +242,7 @@ section {
     background: white;
     left: 4px;
     transition: all 0.3s ease;
-    z-index: 2;
+    z-index: 1;
 }
 
 [data-theme="dark"] .theme-toggle-switch {
@@ -244,17 +256,19 @@ section {
 .theme-toggle-icon-sun,
 .theme-toggle-icon-moon {
     font-size: 14px;
-    z-index: 1;
+    z-index: 2;
     color: #666;
     transition: opacity 0.3s ease;
 }
 
 .theme-toggle-icon-sun {
     margin-left: 6px;
+    opacity: 1;
 }
 
 .theme-toggle-icon-moon {
     margin-right: 6px;
+    opacity: 1;
 }
 
 /* Hide/show icons based on theme */
