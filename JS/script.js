@@ -41,23 +41,6 @@ function toggleSidebar() {
     toggleBtn.classList.toggle('fa-chevron-left');
 }
 
-const sidebarTooltips = document.querySelectorAll('.sidebar-tooltip-wrapper');
-
-sidebarTooltips.forEach(tooltip => {
-  tooltip.addEventListener('mouseenter', () => {
-    tooltip.querySelector('.sidebar-tooltip').style.opacity = '1';
-    tooltip.querySelector('.sidebar-tooltip').style.visibility = 'visible';
-    tooltip.querySelector('.sidebar-tooltip').style.transform = 'translateX(0)';
-  });
-
-  tooltip.addEventListener('mouseleave', () => {
-    tooltip.querySelector('.sidebar-tooltip').style.opacity = '0';
-    tooltip.querySelector('.sidebar-tooltip').style.visibility = 'hidden';
-    tooltip.querySelector('.sidebar-tooltip').style.transform = 'translateX(-10px)';
-  });
-});
-
-
 function toggleMobileMenu() {
     const sidebar = document.querySelector('.sidebar');
     sidebar.classList.toggle('mobile-active');
