@@ -200,9 +200,9 @@ body {
 .sidebar-tooltip-wrapper {
     position: relative;
     display: inline-block;
-  }
+}
   
-  .sidebar-tooltip {
+.sidebar-tooltip {
     position: absolute;
     background-color: var(--primary-color);
     color: white;
@@ -215,9 +215,9 @@ body {
     transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
     transform: translateX(-10px);
     z-index: 999;
-  }
+}
   
-  .sidebar-tooltip::before {
+.sidebar-tooltip::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -226,13 +226,13 @@ body {
     border-width: 6px;
     border-style: solid;
     border-color: transparent transparent transparent var(--primary-color);
-  }
+}
   
-  .sidebar-tooltip-wrapper:hover .sidebar-tooltip {
+.sidebar-tooltip-wrapper:hover .sidebar-tooltip {
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
-  }
+}
 
 .main-content {
     margin-left: var(--sidebar-width);
