@@ -305,19 +305,19 @@ section {
   }
   
 
-.hero-content {
+  .hero-content {
     display: flex;
-    flex-direction: row; /* Align text and image horizontally */
+    justify-content: space-between;
     align-items: center;
-    gap: 20px; /* Space between text and image */
+    gap: 40px;
     padding: 5%;
-    background: linear-gradient(135deg, #178582, #BFA181); /* Gradient of turquoise and gold */
+    background: linear-gradient(135deg, #178582, #BFA181);
     box-shadow: 8px 12px 15px rgba(0, 0, 0, 0.5);
     border-radius: 30px 60px;
     width: 80%;
-    height: 80%;
+    height: auto; /* Changed from 80% to auto for better responsiveness */
     max-width: 1000px;
-    margin: 0 auto ;
+    margin: 0 auto;
     transition: transform 0.3s ease;
     color: #BFA181;
   }
@@ -343,6 +343,32 @@ section {
     font-size: 1.2rem;
     color: #0A1828; /* Dark classic blue text */
   }
+
+  .hero-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 215px;
+}
+
+.hero-image img {
+    height: 25rem;
+    max-width: 350px;
+    border-radius: 20px;
+    padding: 0 35px 0 40px;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+}
+
+.hero-image img:hover {
+    transform: scale(1.02);
+}
 
 /* Mobile view styles */
 @media (max-width: 768px) {
@@ -427,13 +453,38 @@ animation: slideDown 0.3s ease-out;
 }
 
 @keyframes slideDown {
-0% {
-    opacity: 0;
-    transform: translateY(-10px);
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-100% {
-    opacity: 1;
-    transform: translateY(0);
+
+.hero-content {
+    flex-direction: column-reverse; /* Image appears above text on mobile */
+    padding: 20px;
+    text-align: center;
+    height: auto;
 }
+
+.hero-text {
+    padding-right: 0;
 }
+
+.hero-image {
+    max-width: 280px; /* Smaller image on mobile */
+    margin-bottom: 20px;
+}
+
+.hero-image img {
+    max-width: 100%;
+}
+
+.hero-content h1 {
+    font-size: 2rem;
+}
+
 }
