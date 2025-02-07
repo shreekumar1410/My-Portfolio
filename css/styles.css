@@ -362,12 +362,21 @@ section {
     max-width: 350px;
     border-radius: 20px;
     padding: 0 35px 0 40px;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease-out;
     object-fit: cover;
 }
 
 .hero-image img:hover {
-    transform: scale(1.02);
+    animation: tiltAnimation 1.5s infinite alternate;
+}
+
+@keyframes tiltAnimation {
+    0% {
+        transform: rotate(-3deg) scale(1.02);
+    }
+    100% {
+        transform: rotate(3deg) scale(1.02);
+    }
 }
 
 /* Mobile view styles */
