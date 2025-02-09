@@ -153,3 +153,42 @@ document.querySelectorAll('.skill-progress').forEach(bar => {
     bar.style.width = '0';
     observer.observe(bar);
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const typingElement = document.querySelector('.typing-text');
+    const text = "SHREE KUMAR";
+    let index = 0;
+    let isDeleting = false;
+    let typingDelay = 200;
+    let deletingDelay = 100;
+    let pauseDelay = 2000;
+
+    function type() {
+        const currentText = text.substring(0, index);
+        if (typingElement) {
+            // Create a span for the text and cursor
+            typingElement.innerHTML = `
+                <span class="text">${currentText}</span>
+                <span class="cursor">|</span>
+            `;
+        }
+
+        if (!isDeleting && index < text.length) {
+            index++;
+            setTimeout(type, typingDelay);
+        } else if (!isDeleting && index === text.length) {
+            isDeleting = true;
+            setTimeout(type, pauseDelay);
+        } else if (isDeleting && index > 0) {
+            index--;
+            setTimeout(type, deletingDelay);
+        } else if (isDeleting && index === 0) {
+            isDeleting = false;
+            setTimeout(type, typingDelay);
+        }
+    }
+
+    if (typingElement) {
+        typingElement.textContent = '';
+        type();
+    }
+});
