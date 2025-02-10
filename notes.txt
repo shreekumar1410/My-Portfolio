@@ -1,3 +1,0 @@
-05/02/2025 - want to get typing animation for home section content.
-07/02/2025 - want to put the button to download the my resume.
-08/02/2025 - add dark theme to thehome content(#323232, #0e0e0e,[filter: drop-shadow(-25px 0 15px rgba(0, 0, 0, 0.35));])

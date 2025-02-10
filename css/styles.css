@@ -350,7 +350,33 @@ section {
     flex: 1;
     padding-left: 5%;
     z-index: 1;
-    max-width: 50%;
+    max-width: 60%;
+}
+
+.intro-text {
+    color: var(--text-primary);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.name {
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 4rem;
+    text-shadow: -5px 5px 4px var(--hero-shadow);
+}
+
+.skill-wrapper {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    min-height: 2.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.prefix {
+    color: var(--text-primary);
+    margin-right: 0.5rem;
 }
 
 .greeting {
@@ -367,13 +393,12 @@ section {
 
 .hero-text h1 {
     color: var(--text-primary);
-    font-size: 4rem;
-    font-weight: bold;
+    font-size: 2rem;
+    font-weight: naormal;
     line-height: 1.1;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     transition: all 0.3s ease, text-shadow 0.3s ease;
     position: relative;
-    text-shadow: -5px 5px 4px var(--hero-shadow);
 }
 
 [data-theme="dark"] .hero-text h1 {
@@ -381,18 +406,18 @@ section {
     filter: drop-shadow(-20px 0 20px var(--hero-shadow));
 }
 
-.hero-text h1:hover {
+.hero-text .name:hover {
     transform: translateY(-5px);
     text-shadow: 
-        0 10px 20px rgba(0, 0, 0, 0.4),
-        0 6px 6px rgba(0, 0, 0, 0.3);
+        0 10px 20px var(--hero-shadow),
+        0 6px 6px var(--hero-shadow);
     /* background: linear-gradient(45deg, var(--text-primary), var(--accent)); */
     /* -webkit-background-clip: text;
     background-clip: text;
     color: transparent;*/
 }
 
-.typing-text {
+/* .typing-text {
     color: var(--text-primary);
     font-size: 4rem;
     font-weight: bold;
@@ -400,6 +425,12 @@ section {
     margin-bottom: 1.5rem;
     position: relative;
     text-shadow: -5px 5px 4px var(--hero-shadow);
+    display: inline-block;
+} */
+
+.typing-text {
+    color: var(--accent);
+    font-weight: bold;
     display: inline-block;
 }
 
@@ -411,7 +442,7 @@ section {
     display: inline-block;
     margin-left: 2px;
     animation: blink 0.7s infinite;
-    font-weight: 100; /* Makes the cursor thinner */
+    font-weight: 100;
 }
 
 @keyframes blink {
@@ -484,6 +515,23 @@ section {
 
 [data-theme="dark"] .hero-image img {
     filter: drop-shadow(-20px 0 20px var(--hero-shadow));
+}
+
+.description {
+    margin-bottom: 2rem;
+}
+
+.description p {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.highlight-text {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
 }
 
 /* Mobile view styles */
