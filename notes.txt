@@ -1,0 +1,50 @@
+:root {
+    /* Layout variables */
+    --sidebar-width: 240px;
+    --sidebar-collapsed-width: 60px;
+    --transition-speed: 0.4s;
+
+    /* Light theme */
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --hover-color: #2980b9;
+    --text-color: #333;
+    --section-bg-primary: #ffffff;
+    --section-bg-secondary: #ecf0f1;
+    /* --bg-color: #ecf0f1; */
+    --card-bg: white;
+
+    /* Home section */
+    --home-bg: #ffffff;
+    --text-primary: #2c3e50;
+    --text-secondary: #666666;
+    --accent: #3498db;
+    --button-bg: #3498db;
+    --button-text: #ffffff;
+    --button-hover: #2980b9;
+    --greeting: #888888;
+    --hero-shadow: rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] {
+    /* Dark theme */
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --hover-color: #2980b9;
+    --text-color: #333;
+    --section-bg-primary: #1a1a1a;
+    --section-bg-secondary: #242424;
+    /* --bg-color: #1a1a1a; */
+    --card-bg: white;
+
+    /* Home section */
+    --home-bg: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --accent: #3498db;
+    --button-bg: #3498db;
+    --button-text: #ffffff;
+    --button-hover: #2980b9;
+    --greeting: #888888;
+    --hero-shadow: rgba(255, 255, 255, 0.35);
+}
