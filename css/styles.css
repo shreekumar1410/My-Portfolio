@@ -547,6 +547,100 @@ section {
     font-weight: 500;
 }
 
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.social-icon {
+    font-size: 1.8rem;
+    color: var(--accent);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    color: var(--hover-color);
+}
+
+.hero-social-links {
+    margin-top: 2rem;
+}
+
+.hero-social-links .social-icon {
+    color: var(--text-primary);
+    margin-right: 1.5rem;
+}
+
+/* Tooltip Styles */
+.social-icon-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.social-icon-wrapper .social-icon {
+    position: relative;
+    font-size: 1.8rem;
+    color: var(--accent);
+    transition: all 0.3s ease;
+}
+
+.social-icon-wrapper:hover .social-icon {
+    transform: translateY(-3px);
+    color: var(--hover-color);
+}
+
+/* Updated Tooltip positioning */
+.social-icon-wrapper::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -29px; /* Position below the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 12px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Updated Tooltip Arrow - now points upward */
+.social-icon-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 0px; /* Position just below the icon */
+    left: 28%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-bottom-color: var(--primary-color); /* Changed from top to bottom */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Show tooltip on hover with updated animation */
+.social-icon-wrapper:hover::before,
+.social-icon-wrapper:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%); /* Simplified transform */
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .social-icon-wrapper::before {
+    background-color: var(--accent);
+}
+
+[data-theme="dark"] .social-icon-wrapper::after {
+    border-bottom-color: var(--accent); /* Changed from top to bottom */
+}
+
 /* Add these new styles to your existing CSS file */
 
 #about {
@@ -927,97 +1021,4 @@ animation: slideDown 0.3s ease-out;
     font-size: 1.5rem;
 }
 
-}
-
-.social-links {
-    display: flex;
-    gap: 1.5rem;
-    margin: 2rem 0;
-}
-
-.social-icon {
-    font-size: 1.8rem;
-    color: var(--accent);
-    transition: all 0.3s ease;
-}
-
-.social-icon:hover {
-    transform: translateY(-3px);
-    color: var(--hover-color);
-}
-
-.hero-social-links {
-    margin-top: 2rem;
-}
-
-.hero-social-links .social-icon {
-    color: var(--text-primary);
-    margin-right: 1.5rem;
-}
-
-/* Tooltip Styles */
-.social-icon-wrapper {
-    position: relative;
-    display: inline-block;
-}
-
-.social-icon-wrapper .social-icon {
-    position: relative;
-    font-size: 1.8rem;
-    color: var(--accent);
-    transition: all 0.3s ease;
-}
-
-.social-icon-wrapper:hover .social-icon {
-    transform: translateY(-3px);
-    color: var(--hover-color);
-}
-
-/* Updated Tooltip positioning */
-.social-icon-wrapper::before {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: -29px; /* Position below the icon */
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 6px 12px;
-    background-color: var(--primary-color);
-    color: white;
-    font-size: 0.9rem;
-    white-space: nowrap;
-    border-radius: 4px;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-}
-
-/* Updated Tooltip Arrow - now points upward */
-.social-icon-wrapper::after {
-    content: '';
-    position: absolute;
-    bottom: 0px; /* Position just below the icon */
-    left: 28%;
-    transform: translateX(-50%);
-    border: 6px solid transparent;
-    border-bottom-color: var(--primary-color); /* Changed from top to bottom */
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-}
-
-/* Show tooltip on hover with updated animation */
-.social-icon-wrapper:hover::before,
-.social-icon-wrapper:hover::after {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%); /* Simplified transform */
-}
-
-/* Dark theme adjustments */
-[data-theme="dark"] .social-icon-wrapper::before {
-    background-color: var(--accent);
-}
-
-[data-theme="dark"] .social-icon-wrapper::after {
-    border-bottom-color: var(--accent); /* Changed from top to bottom */
 }
