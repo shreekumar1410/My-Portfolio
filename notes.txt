@@ -24,6 +24,7 @@
     --button-hover: #2980b9;
     --greeting: #888888;
     --hero-shadow: rgba(0, 0, 0, 0.35);
+    
 }
 
 [data-theme="dark"] {
