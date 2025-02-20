@@ -59,30 +59,30 @@
                     <p class="highlight-text">Explore my work and let's build something amazing together!</p>
                     
                     <div class="cta-buttons">
-                        <a href="image/My_Resumey.pdf" class="cta-button" download><i class="fas fa-file-download"></i> Download Resume</a>
+                        <a href="./asset/Docu/My_Resumey.pdf" class="cta-button" download><i class="fas fa-file-download"></i> Download Resume</a>
                     </div>
 
                     <div class="hero-social-links social-links">
                         <div class="social-icon-wrapper" data-tooltip="GitHub">
-                            <a href="https://github.com/YourUsername" target="_blank" class="social-icon">
+                            <a href="https://github.com/shreekumar1410" target="_blank" class="social-icon">
                                 <i class="fab fa-github"></i>
                             </a>
                         </div>
                         
                         <div class="social-icon-wrapper" data-tooltip="LinkedIn">
-                            <a href="https://linkedin.com/in/YourUsername" target="_blank" class="social-icon">
+                            <a href="https://www.linkedin.com/in/shree-kumar-mb" target="_blank" class="social-icon">
                                 <i class="fab fa-linkedin"></i>
                             </a>
                         </div>
                         
                         <div class="social-icon-wrapper" data-tooltip="Twitter">
-                            <a href="https://twitter.com/YourUsername" target="_blank" class="social-icon">
+                            <a href="https://x.com/ShreeKumar91905" target="_blank" class="social-icon">
                                 <i class="fab fa-twitter"></i>
                             </a>
                         </div>
                         
                         <div class="social-icon-wrapper" data-tooltip="YouTube">
-                            <a href="https://medium.com/@YourUsername" target="_blank" class="social-icon">
+                            <a href="https://studio.youtube.com/channel/UC9VuZ9mluUDeIR5GEczvSfA/videos" target="_blank" class="social-icon">
                                 <i class="fab fa-youtube"></i>
                             </a>
                         </div>
@@ -92,7 +92,7 @@
                 </div>
                 
                 <div class="hero-image">
-                    <img src="image/My_New_Photo.png" alt="Shree Kumar">
+                    <img src="./asset/Images/My_New_Photo.png" alt="Shree Kumar">
                 </div>
             </div>
         </section>
@@ -237,19 +237,56 @@
         </section>-->
 
         <section id="projects">
-            <h2>Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>E-commerce Platform</h3>
-                    <p>Built using React, Node.js, and MongoDB</p>
+            <h2 class="section-title">Project</h2>
+            <div class="projects-container">
+                <div class="filter-section">
+                    <span class="filter-label">Filter By:</span>
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Search" class="search-input">
+                        <select id="categoryFilter" class="category-filter">
+                            <option value="all">All Categories</option>
+                            <option value="corporate-design">Corporate Design</option>
+                            <option value="branding">Branding</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <h3>Task Management App</h3>
-                    <p>Developed with Vue.js and Firebase</p>
-                </div>
-                <div class="project-card">
-                    <h3>Portfolio Website</h3>
-                    <p>Created using HTML, CSS, and JavaScript</p>
+            
+                <div class="project-grid">
+                    <div class="project-card" data-category="corporate-design">
+                        <div class="project-image-container">
+                            <img src="./asset/Images/project-1_ex.jpg" alt="ITIC Project" class="project-image">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">CORPORATE DESIGN</span>
+                            <h3 class="project-title">ITIC</h3>
+                            <p class="project-description">Redesign ITIC's company profile to effectively showcase its services in the environmental, healthcare, and warehousing sectors, ensuring comprehensive representation for diverse target audiences.</p>
+                            <a href="#" class="read-more">Read Insight <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+            
+                    <div class="project-card" data-category="corporate-design">
+                        <div class="project-image-container">
+                            <img src="./asset/Images/project-2_ex.jpg" alt="Al Khudair International Project" class="project-image">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">CORPORATE DESIGN</span>
+                            <h3 class="project-title">Al Khudair International</h3>
+                            <p class="project-description">Redesign Al Khudair International's company profile to effectively showcase its expertise in residential, commercial, and industrial projects.</p>
+                            <a href="#" class="read-more">Read Insight <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+            
+                    <div class="project-card" data-category="branding">
+                        <div class="project-image-container">
+                            <img src="./asset/Images/project-3_ex.jpg" alt="Leia Activewear Project" class="project-image">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">BRANDING</span>
+                            <h3 class="project-title">Leia Activewear</h3>
+                            <p class="project-description">Design branding for Leia Activewear, targeting women with a mission to empower them through high-quality activewear.</p>
+                            <a href="#" class="read-more">Read Insight <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
