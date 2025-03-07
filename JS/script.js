@@ -222,10 +222,10 @@ document.addEventListener('DOMContentLoaded', function() {
         projectCards.forEach(card => {
             const title = card.querySelector('.project-title').textContent.toLowerCase();
             const description = card.querySelector('.project-description').textContent.toLowerCase();
-            const category = card.dataset.category;
+            const category = card.dataset.category.split(',');
 
             const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
-            const matchesCategory = selectedCategory === 'all' || category === selectedCategory;
+            const matchesCategory = selectedCategory === 'all' || category.includes(selectedCategory);
 
             if (matchesSearch && matchesCategory) {
                 card.style.display = 'block';
