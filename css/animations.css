@@ -1,0 +1,223 @@
+/* Add this to your existing CSS file (styles.css) */
+
+/* Animation utility classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .scale-in {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .scale-in.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .slide-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .slide-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .slide-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .slide-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Staggered animations for list items */
+  .stagger-animation > * {
+    opacity: 1;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .stagger-animation > *.visible:nth-child(1) {
+    transition-delay: 0s;
+  }
+  
+  .stagger-animation > *.visible:nth-child(2) {
+    transition-delay: 0.1s;
+  }
+  
+  .stagger-animation > *.visible:nth-child(3) {
+    transition-delay: 0.2s;
+  }
+  
+  .stagger-animation > *.visible:nth-child(4) {
+    transition-delay: 0.3s;
+  }
+  
+  .stagger-animation > *.visible:nth-child(5) {
+    transition-delay: 0.4s;
+  }
+  
+  .stagger-animation > *.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Rotate animation for icons */
+  .rotate-in {
+    opacity: 0;
+    transform: rotateY(90deg);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .rotate-in.visible {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+  
+  /* Bounce animation */
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-20px);
+    }
+    60% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .bounce-in {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+  
+  .bounce-in.visible {
+    opacity: 1;
+    animation: bounce 1s ease;
+  }
+  
+  /* Glow animation */
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 0 rgba(52, 152, 219, 0);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(52, 152, 219, 0.5);
+    }
+    100% {
+      box-shadow: 0 0 0 rgba(52, 152, 219, 0);
+    }
+  }
+  
+  .glow-in {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+  
+  .glow-in.visible {
+    opacity: 1;
+    animation: glow 2s ease infinite;
+  }
+  
+  /* Text reveal animation */
+  .text-reveal {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .text-reveal .inner {
+    /* display: block; */
+    transform: translateY(100%);
+    transition: transform 0.6s ease;
+  }
+  
+  .text-reveal.visible .inner {
+    transform: translateY(0);
+  }
+  
+  /* Modern view timeline animations for browsers that support it */
+  @supports (animation-timeline: view()) {
+    .view-timeline-fade {
+      animation: fadeIn 1s linear;
+      animation-timeline: view();
+      animation-range: entry 10% cover 40%;
+    }
+    
+    .view-timeline-scale {
+      animation: scaleIn 1s linear;
+      animation-timeline: view();
+      animation-range: entry 10% cover 40%;
+    }
+    
+    .view-timeline-slide-left {
+      animation: slideInLeft 1s linear;
+      animation-timeline: view();
+      animation-range: entry 10% cover 40%;
+    }
+    
+    .view-timeline-slide-right {
+      animation: slideInRight 1s linear;
+      animation-timeline: view();
+      animation-range: entry 10% cover 40%;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
