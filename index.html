@@ -10,7 +10,13 @@
     <link href="./css/animations.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
     <nav class="sidebar">
+        <!-- Your existing navigation content -->
         <div class="header-container">
             <div class="logo">
                 <span onclick="resetToHome()">Portfolio</span>
@@ -43,11 +49,11 @@
     </nav>
 
     <main class="main-content">
-        <!-- Updated home section -->
         <section id="home">
             <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="intro-text">Hi, I'm <br> <span class="name">SHREE KUMAR</span></h1>
+                <div class="hero-text animate-on-scroll">
+                    <!-- Your existing hero content -->
+                        <h1 class="intro-text">Hi, I'm <br> <span class="name">SHREE KUMAR</span></h1>
                     <div class="skill-wrapper">
                         <!-- <span class="prefix">a </span> -->
                         <span class="typing-text"></span>
@@ -89,18 +95,18 @@
                         </div>
                         
                     </div>
-
                 </div>
-                
                 <div class="hero-image">
-                    <img src="./asset/Images/My_New_Photo.png" alt="Shree Kumar">
+                    <!-- Your existing hero image -->
+  			        <img src="./asset/Images/My_New_Photo.png" alt="Shree Kumar">
                 </div>
             </div>
         </section>
 
-        <section id="about" class="about-section">
-            <h2 class="section-title">About Me</h2>
+        <section id="about">
+            <h2 class="section-title animate-on-scroll">About Me</h2>
             <div class="about-content">
+                <!-- Your existing about content -->
                 <div class="about-text">
                     <h3 class="about-subtitle">Hi, I'm Shree Kumar -- A Passionate Software & Web Developer</h3>
                     
@@ -184,63 +190,14 @@
                             </li>
                         </ul>
                     </div>
-
-                    <!-- <div class="career-goals">
-                        <h3>Career Goals</h3>
-                        <p>
-                            My goal is to become a <span class="highlight">skilled front-end developer</span> and 
-                            contribute to innovative projects that improve user experiences. I am eager to learn, 
-                            grow, and collaborate with like-minded professionals in the tech industry.
-                        </p>
-                    </div>
-
-                    <div class="beyond-coding">
-                        <h3>Beyond Coding</h3>
-                        <p>
-                            Apart from coding, I enjoy <span class="highlight">gaming (outdoor) and learning new 
-                            technology trends</span>, which keep me engaged and continuously expanding my knowledge. 
-                            I believe in continuous learning and love exploring the latest advancements in the tech world.
-                        </p>
-                    </div> -->
-                </div>
             </div>
         </section>
 
-        <!-- <section id="career">
-            <h2>Career Journey</h2>
-            <div style="margin-top: 20px;">
-                <h3>Senior Developer - Tech Corp (2020-Present)</h3>
-                <p>Leading development team in creating enterprise solutions</p>
-                
-                <h3>Web Developer - StartUp Inc (2018-2020)</h3>
-                <p>Developed and maintained multiple client websites</p>
-            </div>
-        </section> 
-
-        <section id="skills">
-            <h2>Skills</h2>
-            <div style="margin-top: 20px;">
-                <h4>HTML/CSS</h4>
-                <div class="skill-bar">
-                    <div class="skill-progress" style="width: 90%"></div>
-                </div>
-
-                <h4>JavaScript</h4>
-                <div class="skill-bar">
-                    <div class="skill-progress" style="width: 85%"></div>
-                </div>
-
-                <h4>React</h4>
-                <div class="skill-bar">
-                    <div class="skill-progress" style="width: 80%"></div>
-                </div>
-            </div>
-        </section>-->
-
         <section id="projects">
-            <h2 class="section-title">Project</h2>
+            <h2 class="section-title animate-on-scroll">Projects</h2>
             <div class="projects-container">
-                <div class="filter-section">
+                <!-- Your existing projects content -->
+                    <div class="filter-section">
                     <span class="filter-label">Filter By:</span>
                     <div class="search-container">
                         <input type="text" id="searchInput" placeholder="Search" class="search-input">
@@ -306,20 +263,75 @@
         </section>
 
         <section id="contact">
-            <h2>Contact Me</h2>
-            <div class="contact-form">
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <textarea placeholder="Message" rows="5"></textarea>
-                <button type="submit">Send Message</button>
+            <h2 class="section-title animate-on-scroll">Contact Me</h2>
+            <div class="contact-container">
+                <!-- Your existing contact content -->
+                <div class="contact-form">
+                    <div class="form-row">
+                        <input type="text" placeholder="Name*" required>
+                        <input type="email" placeholder="Email*" required>
+                    </div>
+                    <input type="text" placeholder="Subject">
+                    <textarea placeholder="Message" rows="5"></textarea>
+                    <button class="submit-btn">Submit</button>
+                </div>
+                <div class="contact-info">
+                    <h3>Browny Star</h3>
+                    <p>UI/UX Designer</p>
+                    
+                    <h4>Phone</h4>
+                    <p>987-123-6547</p>
+                    
+                    <h4>Email</h4>
+                    <p>browny@info.com</p>
+                    
+                    <h4>Website</h4>
+                    <p>www.brownsine.com</p>
+                    
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
             </div>
-
-            
         </section>
+
+        <!-- <section id="career">
+            <h2>Career Journey</h2>
+            <div style="margin-top: 20px;">
+                <h3>Senior Developer - Tech Corp (2020-Present)</h3>
+                <p>Leading development team in creating enterprise solutions</p>
+                
+                <h3>Web Developer - StartUp Inc (2018-2020)</h3>
+                <p>Developed and maintained multiple client websites</p>
+            </div>
+        </section> 
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div style="margin-top: 20px;">
+                <h4>HTML/CSS</h4>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 90%"></div>
+                </div>
+
+                <h4>JavaScript</h4>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 85%"></div>
+                </div>
+
+                <h4>React</h4>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 80%"></div>
+                </div>
+            </div>
+        </section>-->
     </main>
 
-    <script src="./JS/script.js"></script>
-    <script src="./JS/scroll-animations.js"></script>
-    
+    <script src="./js/script.js"></script>
+    <script src="./js/scroll-animations.js"></script>
 </body>
 </html>
