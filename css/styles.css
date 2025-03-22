@@ -1273,6 +1273,10 @@ section {
     padding: 20px;
 }
 
+.skill-wrapper {
+    justify-content: center;
+}
+
 .hero-text {
     max-width: 100%;
     padding: 20px;
