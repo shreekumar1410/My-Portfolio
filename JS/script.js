@@ -154,62 +154,7 @@ document.querySelectorAll('.skill-progress').forEach(bar => {
     observer.observe(bar);
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const typingElement = document.querySelector('.typing-text');
-    const skills = [
-        "Software Developer",
-        "Front-End Developer",
-        "Web Developer"
-    ];
-    let skillIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let typingDelay = 100;
-    let deletingDelay = 50;
-    let newSkillDelay = 2000;
-
-    function type() {
-        const currentSkill = skills[skillIndex];
-        
-        if (typingElement) {
-            if (!isDeleting) {
-                // Typing
-                typingElement.innerHTML = `
-                    <span class="text">${currentSkill.substring(0, charIndex)}</span>
-                    <span class="cursor">|</span>
-                `;
-                charIndex++;
-
-                if (charIndex > currentSkill.length) {
-                    isDeleting = true;
-                    setTimeout(type, newSkillDelay); // Pause before deleting
-                    return;
-                }
-            } else {
-                // Deleting
-                typingElement.innerHTML = `
-                    <span class="text">${currentSkill.substring(0, charIndex)}</span>
-                    <span class="cursor">|</span>
-                `;
-                charIndex--;
-
-                if (charIndex === 0) {
-                    isDeleting = false;
-                    skillIndex = (skillIndex + 1) % skills.length;
-                }
-            }
-        }
-
-        setTimeout(type, isDeleting ? deletingDelay : typingDelay);
-    }
-
-    if (typingElement) {
-        type();
-    }
-});
-
-// Project
-
+// Project filtering
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('searchInput');
     const categoryFilter = document.getElementById('categoryFilter');
@@ -240,15 +185,78 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    searchInput.addEventListener('input', filterProjects);
-    categoryFilter.addEventListener('change', filterProjects);
-
-    // Initialize AOS for scroll animations if you're using it
-    if (typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 800,
-            once: true
-        });
+    if (searchInput && categoryFilter) {
+        searchInput.addEventListener('input', filterProjects);
+        categoryFilter.addEventListener('change', filterProjects);
     }
+});
+
+// Footer visibility control
+document.addEventListener('DOMContentLoaded', function() {
+    const footer = document.querySelector('.footer');
+    const contactSection = document.querySelector('#contact');
+    const mainContent = document.querySelector('.main-content');
+    let lastScrollPosition = window.pageYOffset;
+    let isFooterVisible = false;
+
+    function handleFooterVisibility() {
+        if (!footer || !contactSection) return;
+
+        const currentScrollPosition = window.pageYOffset;
+        const contactSectionTop = contactSection.offsetTop;
+        const contactSectionBottom = contactSectionTop + contactSection.offsetHeight;
+        const windowHeight = window.innerHeight;
+        const scrollPosition = currentScrollPosition + windowHeight;
+
+        // Show footer only when we've scrolled completely past the contact section
+        if (currentScrollPosition > contactSectionBottom - windowHeight) {
+            if (!isFooterVisible) {
+                footer.classList.add('visible');
+                isFooterVisible = true;
+            }
+        } else {
+            if (isFooterVisible) {
+                footer.classList.remove('visible');
+                isFooterVisible = false;
+            }
+        }
+
+        lastScrollPosition = currentScrollPosition;
+    }
+
+    // Add padding to main content to prevent footer overlap
+    function updateMainContentPadding() {
+        const footerHeight = footer.offsetHeight;
+        document.querySelector('main').style.paddingBottom = `${footerHeight}px`;
+    }
+
+    // Update footer position when sidebar is toggled
+    function updateFooterPosition() {
+        const sidebarWidth = mainContent.classList.contains('expanded') ? 
+            getComputedStyle(document.documentElement).getPropertyValue('--sidebar-collapsed-width') :
+            getComputedStyle(document.documentElement).getPropertyValue('--sidebar-width');
+        
+        footer.style.left = sidebarWidth;
+        footer.style.width = `calc(100% - ${sidebarWidth})`;
+    }
+
+    // Initial setup
+    updateMainContentPadding();
+    handleFooterVisibility();
+    updateFooterPosition();
+
+    // Handle scroll events with throttling
+    window.addEventListener('scroll', throttle(handleFooterVisibility, 100));
+    
+    // Update padding and position on window resize
+    window.addEventListener('resize', throttle(() => {
+        updateMainContentPadding();
+        updateFooterPosition();
+    }, 100));
+
+    // Update footer position when sidebar is toggled
+    document.querySelector('.toggle-btn').addEventListener('click', () => {
+        setTimeout(updateFooterPosition, 400); // Wait for sidebar transition
+    });
 });
 
